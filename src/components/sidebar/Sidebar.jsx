@@ -1,15 +1,7 @@
 import "./sidebar.scss"
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import FormatBoldIcon from '@mui/icons-material/FormatBold';
 import ScoreboardIcon from '@mui/icons-material/Scoreboard';
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -18,7 +10,10 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
         <div className="top">
-            <span className="logo">Basys.ai</span>
+            <FormatBoldIcon style={{fontSize:"35px" , marginRight: "8" , marginLeft: "-3"}}/>
+            <span className="logo">
+            
+                Basys.ai</span>
         </div>
         <hr />
         <div className="center">
