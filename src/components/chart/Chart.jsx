@@ -48,7 +48,7 @@ const data = [
 const Chart = () => {
   return (
     <div className='chart'>
-        <h1 className="title" >Basys.ai Score</h1>
+        <h1 className="title" >Bcleaasys.ai Score</h1>
             <AreaChart width={830} height={450} data={data}
   margin={{ top: 30, right: 30, left: 0, bottom: 0 }}>
   <defs>

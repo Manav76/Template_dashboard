@@ -32,7 +32,7 @@ const Sidebar = () => {
                 <li>
                     <ScoreboardIcon/>
                     <Link to="/users" style={{textDecoration:"none"}} >
-                    <span>Score Card</span>
+                    <span>Requests</span>
                     </Link>
                     </li>
                 <li>
