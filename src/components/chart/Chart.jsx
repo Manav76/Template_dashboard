@@ -70,12 +70,7 @@ const data = [
     "guest": 3908,
     "amt": 2000
   },
-  {
-    "name": "Week 5",
-    "user": 1890,
-    "guest": 4800,
-    "amt": 2181
-  }
+ 
   
 ]
 const Chart = () => {
@@ -84,7 +79,7 @@ const Chart = () => {
     <div className='chart'>
         <h1 className="title" >Activities</h1>
      
-<LineChart width={1200} height={350} data={data}
+<LineChart width={1200} height={250} data={data}
   margin={{ top: 30, right: 30, left: 0, bottom: 0 }}>
   <CartesianGrid strokeDasharray="3 3" />
   <XAxis dataKey="name" />
