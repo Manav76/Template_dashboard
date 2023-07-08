@@ -1,5 +1,5 @@
 import "./featured.scss"
- //import SemiCircleProgressBar from "react-progressbar-semicircle";
+
  import { PieChart, Pie , Cell } from 'recharts';
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
@@ -21,7 +21,7 @@ const Featured = () => {
       </div>
       <div className="bottom">
         <div className="featuredChart">
-  <PieChart width={730} height={250}>
+  <PieChart width={500} height={250}>
       <Pie
         data={data}
         dataKey="value"

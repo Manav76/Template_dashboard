@@ -15,8 +15,7 @@ const Widget = ({type}) => {
       try {
         const response = await fetch('http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=5'); 
         const data = await response.json();
-        // const { min, max } = data;
-        // const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+      
         setNumber(data[0]);
         setLoading(false);
       } catch (error) {
