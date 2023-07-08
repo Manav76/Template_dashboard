@@ -2,23 +2,44 @@ import "./widget.scss"
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutline';
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-
+import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
+import { useEffect, useState } from "react";
 const Widget = ({type}) => {
+  const [number , setNumber] = useState(null);
+  const [loading , setLoading] = useState(true);
+  const [error,setError] = useState(null);
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=5'); 
+        const data = await response.json();
+        // const { min, max } = data;
+        // const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        setNumber(data[0]);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
     let data;
-    const amount = 100;
+   
   const diff = 20;
-   const readmissions = 17.8;
   switch (type) {
     case "user":
       data = {
-        title: "Patients Count",
-        isMoney: false,
-        link: "See all patients",
+        title: "Total Revenues",
+        isMoney: true,
+        
         icon: (
-          <PersonOutlinedIcon
+          <AccountBalanceWalletOutlinedIcon
             className="icon"
             style={{
               color: "crimson",
@@ -30,9 +51,9 @@ const Widget = ({type}) => {
       break;
     case "order":
       data = {
-        title: "30-day Readmissions",
+        title: "Total Transactions",
         isMoney: false,
-        link: "View all readmissions",
+       
         icon: (
           <LocalHospitalIcon
             className="icon"
@@ -46,11 +67,11 @@ const Widget = ({type}) => {
       break;
     case "earning":
       data = {
-        title: "Risk Adjusted pmpm",
-        isMoney: true,
+        title: "Total Likes",
+        isMoney: false,
          link: "⬇️ 5.4% from September",
         icon: (
-          <MonetizationOnOutlinedIcon
+          <ThumbUpOffAltOutlinedIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
@@ -59,11 +80,11 @@ const Widget = ({type}) => {
       break;
     case "balance":
       data = {
-        title: "Earnings",
-        isMoney: true,
+        title: "Total Users",
+        isMoney: false,
         link: "⬆️ 2.3% from September",
         icon: (
-          <AccountBalanceWalletOutlinedIcon
+          <PersonOutlinedIcon
             className="icon"
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
@@ -79,11 +100,25 @@ const Widget = ({type}) => {
   return (
     <div className="widget">
         <div className="left">
-            <span className="title">{data.title}</span>
+          <span className="title">{data.title}</span>
+            {/* <span className="title">{data.title}</span>
+            
              <span className="counter">
-                {data.isMoney && "$"} {amount}
+                {data.isMoney && "$"} {max}
              </span>
-             <span className="link">{data.link}</span>
+             <span className="link">{data.link}</span> */}
+                 {loading ? (
+          <span>Loading...</span>
+        ) : error ? (
+          <span>Error: {error}</span>
+        ) : (
+          <>
+            <span className="counter">
+              {data.isMoney && "$"} {number}
+            </span>
+            <span className="link">{data.link}</span>
+          </>
+        )}
         </div>
         <div className="right">
             <div className="percentage positive">
@@ -94,7 +129,7 @@ const Widget = ({type}) => {
         </div>
       
     </div>
-  )
-}
+  );
+};
 
 export default Widget

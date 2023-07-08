@@ -1,11 +1,15 @@
 import "./sidebar.scss"
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+//import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
-import ScoreboardIcon from '@mui/icons-material/Scoreboard';
-import ReportProblemIcon from '@mui/icons-material/ReportProblem';
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import HdrAutoIcon from '@mui/icons-material/HdrAuto';
+//import ScoreboardIcon from '@mui/icons-material/Scoreboard';
+//import ReportProblemIcon from '@mui/icons-material/ReportProblem';
+import PaidIcon from '@mui/icons-material/Paid';
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HelpIcon from '@mui/icons-material/Help';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import {Link} from "react-router-dom";
 const Sidebar = () => {
   return (
@@ -15,7 +19,7 @@ const Sidebar = () => {
            <Link to="/" style={{textDecoration:"none"}} >
             <span className="logo">
             
-                Basys.ai</span>
+                Board.</span>
                 </Link>
         </div>
         <hr />
@@ -23,39 +27,48 @@ const Sidebar = () => {
             <ul>
                 <p className="title">MAIN</p>
                 <li>
-                    <DashboardIcon/>
-                    <Link to="/" style={{textDecoration:"none"}} >
+                    <DashboardIcon style={{color:"white" , marginRight:"5px"}} />
+                  
                     <span>Dashboard</span>
-                    </Link>
+                
                     </li>
                     <p className="title">LISTS</p>
                 <li>
-                    <ScoreboardIcon/>
+                    <PaidIcon style={{color:"white", marginRight:"5px"}}/>
                     <Link to="/users" style={{textDecoration:"none"}} >
-                    <span>Requests</span>
+                    <span>Transactions</span>
                     </Link>
                     </li>
                 <li>
-                    <ReportProblemIcon/>
-                    <span>Risk Management</span>
+                  <WorkHistoryIcon style={{color:"white", marginRight:"5px"}}/>
+                    <span>Schedules</span>
                     </li>
                 <li>
-                    <HdrAutoIcon/>
-                    <span>Prior Authorization</span>
+                    <AccountCircleIcon style={{color:"white", marginRight:"5px"}}/>
+                    <span>Users</span>
+                    </li>
+                    <li>
+                    <SettingsIcon style={{color:"white", marginRight:"5px"}}/>
+                    <span>Settings</span>
                     </li>
                 <p className="title">USER</p>
-                <li>
-                    <AccountCircleOutlinedIcon/>
-                    <span>My Profile</span></li>
-                    <li>
+            
+                    {/* <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
+          </li> */}
+          <li>
+          <HelpIcon style={{color:"white", marginRight:"5px"}}/>
+            <span>Help</span>
+          </li>
+          <li>
+            <ContactPhoneIcon style={{color:"white", marginRight:"5px"}}/>
+            <span>Contact Us</span>
           </li>
             </ul>
         </div>
         <div className="bottom">
-            <div className="colorOption"></div>
-            <div className="colorOption"></div>
+           
         </div>
     
     </div>

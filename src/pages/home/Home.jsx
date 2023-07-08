@@ -5,6 +5,7 @@ import "./home.scss"
 import Widget from '../../components/widget/Widget'
 import Chart from '../../components/chart/Chart'
 import Featured from '../../components/featured/Featured'
+import Schedule from '../../components/schedule/Schedule'
 const Home = () => {
   return (
     <div className='home'>
@@ -18,9 +19,16 @@ const Home = () => {
         <Widget type = "balance"/>
        </div>
        <div className='charts'>
-       <Featured/>
+       
         <Chart/>
         
+       </div>
+       <div className = "footer">
+        <div className="footer-left">    <Featured/> </div>
+        <div className="footer-right">
+          <Schedule/>
+        </div>
+
        </div>
      </div>
     </div>

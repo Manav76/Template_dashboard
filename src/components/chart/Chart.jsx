@@ -1,70 +1,101 @@
 import "./chart.scss"
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
+import { LineChart,Line,Legend, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
+// const data = [
+//     {
+//       name: 'Week 1',
+//       uv: 4000,
+//       pv: 2400,
+//       amt: 2400,
+//     },
+//     {
+//       name: 'Week 2',
+//       uv: 3000,
+//       pv: 1398,
+//       amt: 2210,
+//     },
+//     {
+//       name: 'Week 3',
+//       uv: 2000,
+//       pv: 9800,
+//       amt: 2290,
+//     },
+//     {
+//       name: 'Week 4',
+//       uv: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'Week 5',
+//       uv: 1890,
+//       pv: 4800,
+//       amt: 2181,
+//     },
+//     {
+//       name: 'Week 6',
+//       uv: 2390,
+//       pv: 3800,
+//       amt: 2500,
+//     },
+//     {
+//       name: 'Week 7',
+//       uv: 3490,
+//       pv: 4300,
+//       amt: 2100,
+//     },
+//   ];
+// ;
 const data = [
-    {
-      name: 'Week 1',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Week 2',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Week 3',
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'Week 4',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Week 5',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'Week 6',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'Week 7',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
-;
+  {
+    "name": "Week 1",
+    "user": 4000,
+    "guest": 2400,
+    "amt": 2400
+  },
+  {
+    "name": "Week 2",
+    "user": 3000,
+    "guest": 1398,
+    "amt": 2210
+  },
+  {
+    "name": "Week 3",
+    "user": 2000,
+    "guest": 9800,
+    "amt": 2290
+  },
+  {
+    "name": "Week 4",
+    "user": 2780,
+    "guest": 3908,
+    "amt": 2000
+  },
+  {
+    "name": "Week 5",
+    "user": 1890,
+    "guest": 4800,
+    "amt": 2181
+  }
+  
+]
 const Chart = () => {
   return (
+    <div className="card">
     <div className='chart'>
-        <h1 className="title" >Bcleaasys.ai Score</h1>
-            <AreaChart width={830} height={450} data={data}
+        <h1 className="title" >Activities</h1>
+     
+<LineChart width={1200} height={350} data={data}
   margin={{ top: 30, right: 30, left: 0, bottom: 0 }}>
-  <defs>
-  
-    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="5%" stopColor="#6439ff" stopOpacity={0.8}/>
-      <stop offset="95%" stopColor="#6439ff" stopOpacity={0}/>
-    </linearGradient>
-  </defs>
+  <CartesianGrid strokeDasharray="3 3" />
   <XAxis dataKey="name" />
   <YAxis />
-  <CartesianGrid strokeDasharray="3 3" />
   <Tooltip />
-  <Area type="monotone" dataKey="pv" stroke="#6439ff" fillOpacity={1} fill="url(#colorPv)" />
-</AreaChart>
-    </div>
+  <Legend />
+  <Line type="monotone" dataKey="guest" stroke="rgba(233, 160, 160, 0.8)" />
+  <Line type="monotone" dataKey="user" stroke="rgba(155, 221, 124, 0.8)" />
+</LineChart>
+</div>
+</div>
   )
 }
 
