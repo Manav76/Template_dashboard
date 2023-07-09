@@ -35,9 +35,9 @@ const Sidebar = () => {
                     <p className="title">LISTS</p>
                 <li>
                     <PaidIcon style={{color:"white", marginRight:"5px"}}/>
-                    <Link to="/users" style={{textDecoration:"none"}} >
+                   
                     <span>Transactions</span>
-                    </Link>
+                    
                     </li>
                 <li>
                   <WorkHistoryIcon style={{color:"white", marginRight:"5px"}}/>
