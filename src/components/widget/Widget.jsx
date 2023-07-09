@@ -26,7 +26,7 @@ const Widget = ({type}) => {
     };
 
     fetchData();
-  }, []);
+  }, [setNumber]);
 
 
     let data;
